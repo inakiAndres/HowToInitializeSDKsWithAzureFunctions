@@ -1,14 +1,5 @@
 'use strict'
 
-var admin = require("firebase-admin");
-
-var serviceAccount = require("../../myazurefunctionstestproject-firebase-adminsdk-gxua0-5b816e2dcd.json");
-
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
-
-
 async function execute(context, req) {
     
     context.log('JavaScript HTTP trigger function processed a request.');
