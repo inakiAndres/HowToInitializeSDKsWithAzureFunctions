@@ -1,0 +1,13 @@
+{
+  "name": "azureinitializesdks",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "func start",
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "firebase-admin": "^9.11.1"
+  },
+  "devDependencies": {}
+}

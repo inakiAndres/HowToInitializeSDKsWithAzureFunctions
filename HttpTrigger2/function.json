@@ -1,0 +1,22 @@
+{
+  "disabled": false,
+  "scriptFile": "../app/interfaces/myFirstAzureFunc2.js",
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ],
+      "route": "api/myFirstAzureFunction2"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    }
+  ]
+}
