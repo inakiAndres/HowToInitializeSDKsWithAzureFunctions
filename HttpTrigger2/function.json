@@ -1,6 +1,6 @@
 {
   "disabled": false,
-  "scriptFile": "../app/interfaces/myFirstAzureFunc2.js",
+  "scriptFile": "../app/interfaces/mySecondAzureFunc.js",
   "bindings": [
     {
       "authLevel": "anonymous",
@@ -11,7 +11,7 @@
         "get",
         "post"
       ],
-      "route": "api/myFirstAzureFunction2"
+      "route": "api/mySecondAzureFunction"
     },
     {
       "type": "http",

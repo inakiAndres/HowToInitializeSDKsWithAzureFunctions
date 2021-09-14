@@ -1,18 +1,38 @@
 'use strict'
+const { initializeFirebase } = require('../infrastructure/initialization')
+const admin = initializeFirebase();
+
 
 async function execute(context, req) {
     
+    console.log('number of instances: ', admin.apps.length);
+    
+    const tokenResponse = await admin
+      .auth()
+      .createCustomToken(req.headers.uid)
+      .then((customToken) => {
+        return {
+            status: 200,
+            body: {customToken},
+            headers: {
+              'Content-Type': 'application/json'
+            }
+        }
+      })
+      .catch((error) => {
+          return {
+            status: 409,
+            body: {error: 'Error creating custom token:', error},
+            headers: {
+              'Content-Type': 'application/json'
+            }
+        }
+       
+      });
+  
     context.log('JavaScript HTTP trigger function processed a request.');
 
-    const name = (req.query.name || (req.body && req.body.name));
-    const responseMessage = name
-        ? "Hello, " + name + ". This HTTP triggered function executed successfully."
-        : "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.";
-
-    context.res = {
-        // status: 200, /* Defaults to 200 */
-        body: responseMessage
-    };
+    context.res = tokenResponse;
 }
 
 module.exports = execute;

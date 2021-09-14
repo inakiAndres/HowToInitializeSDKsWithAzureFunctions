@@ -9,7 +9,7 @@ const serviceAccount = {
   project_id: FIREBASE_PROJECT_ID,
   private_key_id: FIREBASE_PRIVATE_KEY_ID,
   private_key: FIREBASE_PRIVATE_KEY,
-  client_email: `firebase-adminsdk-gxua${FIREBASE_PROJECT_ID}.iam.gserviceaccount.com`,
+  client_email: `firebase-adminsdk-gxua@${FIREBASE_PROJECT_ID}.iam.gserviceaccount.com`,
   client_id: FIREBASE_CLIENT_ID,
   auth_uri: 'https://accounts.google.com/o/oauth2/auth',
   token_uri: 'https://oauth2.googleapis.com/token',
